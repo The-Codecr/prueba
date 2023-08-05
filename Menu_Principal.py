@@ -1,4 +1,4 @@
-import Operaciones ,Mediana , Elementos_concatenados , Diccionario_de_Datos , Dos_Valores, sys 
+import Operaciones ,Mediana , Elementos_concatenados , Diccionario_de_Datos , Dos_Valores,Piedra_Papel_Tijera,sys 
 
 def menu_principal():
     print("-------------Menu Principal--------------")   
@@ -7,8 +7,9 @@ def menu_principal():
     print("(3).Listado de Elementos")
     print("(4).Diccionario de datos")
     print("(5).Reciba dos valores")
-    print("(6).Salir")
-    print("(7).Salir")
+    print("(6).Factorial")
+    print("(7).Piedra ,Papel o Tijera")
+    print("(8).Salir")
     print("----------------------------------------")   
     print("")
     try: 
@@ -52,14 +53,25 @@ def menu_principal():
                 )
                 print(f"Diccionario de datos :\n {datos_personales}")
         elif opcion == 5 :
-                print("-------------Dos Valores - Funcion #2 --------------")  
+                print("-------------Dos Valores - Funcion #5 --------------")  
                 valor_1 = input("Ingrese un valor: ")
                 valor_2 = input("Ingrese otro valor: ")
                 resultado = Dos_Valores.dos_valores(valor_1,valor_2)
                 print(resultado)
         elif opcion == 6 :
-            suma()
+                print("-------------Factorial - Funcion #6 --------------") 
         elif opcion == 7 :
+                print("----------Piedra , Papel o Tijera - Funcion #7 --------------") 
+                try : 
+                    jugardor_1 = input("Ingrese el nombre del Jugador 1:")
+                    jugardor_2 = input("Ingrese el nombre del Jugador 2:")
+                    valor_1 = input(f"Jugardor 1 : {jugardor_1} : Ingrese Piedra , Papel o Tijera: ")
+                    valor_2 = input(f"Jugardor 2 : {jugardor_2} : Ingrese Piedra , Papel o Tijera: ")
+                except: 
+                    print("Ingreso un valor incorrecto intente de nuevo ")
+                resultado =  Piedra_Papel_Tijera.piedra_papel_tijera(valor_1,valor_2,jugardor_1,jugardor_2)
+                print(f"El resultado del juego es {resultado}")
+        elif opcion == 8 :
               print("Saliendo de la aplicación... ¡Vuelva pronto! :)")
               sys.exit()
         else : 
@@ -68,5 +80,5 @@ def menu_principal():
     except Exception as e : 
             print("")
             print(f"Ocurrio un error ingreso un dato erroneo.Porfavor los datos que se le solicitan, Intente de nuevo ")
-            print(f"{e} ")
+            print(f"Descipcion de error : {e} ")
  
