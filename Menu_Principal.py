@@ -1,5 +1,4 @@
-import Operaciones ,Mediana , Elementos_concatenados , Diccionario_de_Datos , Dos_Valores,Piedra_Papel_Tijera,sys 
-
+import Operaciones,Mediana,Elementos_concatenados ,Diccionario_de_Datos,Dos_Valores,Piedra_Papel_Tijera,sys,Factorial
 def menu_principal():
     print("-------------Menu Principal--------------")   
     print("(1).Operaciones")
@@ -60,6 +59,12 @@ def menu_principal():
                 print(resultado)
         elif opcion == 6 :
                 print("-------------Factorial - Funcion #6 --------------") 
+                try:
+                    num_factorial = int(input("Ingrese un numero para calcular su factorial: "))
+                except : 
+                    print("Ingrese un valor numerico para poder calcular el factorial")
+                resultado = Factorial.calculo_Factorial(num_factorial)
+                print(f"{resultado} ")
         elif opcion == 7 :
                 print("----------Piedra , Papel o Tijera - Funcion #7 --------------") 
                 try : 
@@ -67,6 +72,11 @@ def menu_principal():
                     jugardor_2 = input("Ingrese el nombre del Jugador 2:")
                     valor_1 = input(f"Jugardor 1 : {jugardor_1} : Ingrese Piedra , Papel o Tijera: ")
                     valor_2 = input(f"Jugardor 2 : {jugardor_2} : Ingrese Piedra , Papel o Tijera: ")
+                    if valor_1.lower() != "piedra" and "papel" and "tijera":
+                        """
+                        hacer validaciones de los valores que se ingresan 
+                        """
+                        print("Ingreso un valor incorrecto intente de nuevo ")
                 except: 
                     print("Ingreso un valor incorrecto intente de nuevo ")
                 resultado =  Piedra_Papel_Tijera.piedra_papel_tijera(valor_1,valor_2,jugardor_1,jugardor_2)
@@ -79,6 +89,6 @@ def menu_principal():
             print("No ha ingresado ninguna opcion del menu intente de nuevo ")
     except Exception as e : 
             print("")
-            print(f"Ocurrio un error ingreso un dato erroneo.Porfavor los datos que se le solicitan, Intente de nuevo ")
+            print(f"Ingreso un dato erroneo. Porfavor los datos que se le solicitan, Intente de nuevo :) ")
             print(f"Descipcion de error : {e} ")
  
