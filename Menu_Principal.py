@@ -1,4 +1,4 @@
-import Operaciones ,Mediana , Elementos_concatenados , Diccionario_de_Datos,  sys 
+import Operaciones ,Mediana , Elementos_concatenados , Diccionario_de_Datos , Dos_Valores, sys 
 
 def menu_principal():
     print("-------------Menu Principal--------------")   
@@ -6,8 +6,9 @@ def menu_principal():
     print("(2).Mediana")
     print("(3).Listado de Elementos")
     print("(4).Diccionario de datos")
-    print("(5).Modulo")
+    print("(5).Reciba dos valores")
     print("(6).Salir")
+    print("(7).Salir")
     print("----------------------------------------")   
     print("")
     try: 
@@ -21,6 +22,7 @@ def menu_principal():
             num_2 = int(input("Ingrese el segundo numero:"))
             Operaciones.Operaciones(operando,num_1,num_2)
         elif  opcion == 2 :
+                print("-------------Listas - Funcion #2 --------------")  
                 lista = []
                 accion = True
                 while accion == True:  
@@ -34,9 +36,11 @@ def menu_principal():
                 print("")
                 Mediana.calcular_mediana(lista)  
         elif opcion == 3 :
+                print("-------------Elementos Concatenados - Funcion #3 --------------")  
                 resultado = Elementos_concatenados.elementos_concatenados()
                 print("Elementos concatenados:", resultado)    
         elif opcion == 4 :
+                print("-------------Diccionario de Elementos - Funcion #4 --------------")  
                 datos_personales = Diccionario_de_Datos.diccionario_de_datos(
                     Nombre=input("Ingrese su nombre: "),
                     Apellidos=input("Ingrese sus apellidos: "),
@@ -48,7 +52,11 @@ def menu_principal():
                 )
                 print(f"Diccionario de datos :\n {datos_personales}")
         elif opcion == 5 :
-            suma()
+                print("-------------Dos Valores - Funcion #2 --------------")  
+                valor_1 = input("Ingrese un valor: ")
+                valor_2 = input("Ingrese otro valor: ")
+                resultado = Dos_Valores.dos_valores(valor_1,valor_2)
+                print(resultado)
         elif opcion == 6 :
             suma()
         elif opcion == 7 :
@@ -56,9 +64,9 @@ def menu_principal():
               sys.exit()
         else : 
             print("")
-            print("No ha ingresado ninguna del menu intente de nuevo ")
+            print("No ha ingresado ninguna opcion del menu intente de nuevo ")
     except Exception as e : 
             print("")
-            print(f"Ocurrio un error ingreso un dato erroneo .Porfavor los datos que se le solicitan, Intente de nuevo ")
+            print(f"Ocurrio un error ingreso un dato erroneo.Porfavor los datos que se le solicitan, Intente de nuevo ")
             print(f"{e} ")
  
